@@ -1,0 +1,158 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Train Schedule App</title>
+
+    <!-- Link in Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Link in CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+
+  </head>
+
+  <body>
+    
+    <div class="jumbotron">
+      <!-- <div class="row"> -->
+
+      
+        <div class="col-lg-2 col-sm-2 col-xs-2">
+         
+        </div>
+        
+        <!-- Page Title -->
+        <div id = "logo" class="col-lg-8 col-sm-8 col-xs-8">
+          <h1 class="text-center">Train Scheduler</h1>
+          <h2 class="text-center">View the Schedule</h2>
+          <h4 class="text-center">Schedule a new train</h4>
+        </div>
+
+        <div class="col-lg-2 col-sm-2 col-xs-2">
+         
+        </div>
+
+      <!-- </div> -->
+    </div>
+    
+
+  <!-- Main Page Container -->
+  <div class="container">
+
+    <!-- Current Time -->
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="text-center clock-display">Current Time: <span id = "current-time" class = "clock-display"></span></h1>
+      </div>
+    </div>
+
+    <br>
+
+
+      <!-- Current Train Schedule Panel -->
+      
+
+      <!-- Current Train Schedule Panel -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="panel panel-default">
+
+            <!-- Panel Title -->
+            <div class="panel-heading">
+              <h3 class="panel-title">Current Train Schedule</h3>
+            </div>
+
+            <!-- Panel Body -->
+            <div class="panel-body">
+
+              <!-- Table of Train Schedule -->
+              <table class="table">
+
+                <!-- Table Header -->
+                <tr id = "static-table-header">
+                  <th>Train Name</th>
+                  <th>Destination</th>
+                  <th>Frequency (min)</th>
+                  <th>Next Departure</th>
+                  <th>Minutes to Departure</th>
+                </tr>
+
+                <!-- Note: Table Body is Dynamically Generated -->
+
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add a Train Panel -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="panel panel-default">
+
+            <!-- Panel Title -->
+            <div class="panel-heading">
+              <h3 class="panel-title">Add a Train</h3>
+            </div>
+            
+            <!-- Panel Body -->
+            <div class="panel-body">
+
+              <!-- Add a Train Form -->
+              <form role="form">
+
+                <!-- Train Name -->
+                <div class="form-group">
+                  <label for="text">Train Name</label>
+                  <input type="text" class="form-control" id="trainName">
+                </div>
+                
+                <!-- Destination -->
+                <div class="form-group">
+                  <label for="text">Train Destination</label>
+                  <input type="text" class="form-control" id="destination">
+                </div>
+        
+                <!-- First Train Time -->
+                <div class="form-group">
+                  <label for="text">First Departure for Today (Military Time - hh:mm)</label>
+                  <input type="text" class="form-control" id="initialArrivalInput">
+                </div>
+                
+                <!-- Frequency -->
+                <div class="form-group">
+                  <label for="text">Frequency of Departures (min)</label>
+                  <input type="number" class="form-control" id="frequency">
+                </div>
+                
+                <!-- Submit Button (send to database) -->
+                <button type="submit" class="btn btn-default" id="addTrainButton">Submit</button>
+
+              </form>
+
+            </div>
+          </div>
+        </div>    
+      </div>
+
+    </div>
+
+    <!-- Link in jQuery CDN -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <!-- Link in Fire Base CDN -->
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+
+    <!-- Link in Moment.js CDN -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <!-- Link in JavaScript -->
+    <script src="assets/javascript.js"></script>
+
+  </body>
+
+</html>
